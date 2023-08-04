@@ -1,4 +1,4 @@
-from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey, Date
 from .db import engine
 
@@ -35,7 +35,7 @@ class Mark(Base):
     id = Column(Integer, primary_key=True, autoincrement="auto")
     student_id = Column(Integer, ForeignKey("stidents.id"))
     subject_id = Column(Integer, ForeignKey("subjects.id"))
-    mark = Column(Integer(5))
+    mark = Column(Integer)
     date = Column(String) # Date
 
 
