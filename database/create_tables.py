@@ -11,7 +11,7 @@ class Group(Base):
     
     
 class Student(Base):
-    __tablename__ = "stidents"
+    __tablename__ = "students"
     id = Column(Integer, primary_key=True, autoincrement="auto")
     name = Column(String(120), nullable=False)
     group_id = Column(Integer, ForeignKey("groups.id"))
@@ -33,7 +33,7 @@ class Subject(Base):
 class Mark(Base):
     __tablename__ = "marks"
     id = Column(Integer, primary_key=True, autoincrement="auto")
-    student_id = Column(Integer, ForeignKey("stidents.id"))
+    student_id = Column(Integer, ForeignKey("students.id"))
     subject_id = Column(Integer, ForeignKey("subjects.id"))
     mark = Column(Integer)
     date = Column(String) # Date
