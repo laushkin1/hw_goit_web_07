@@ -1,6 +1,5 @@
-
 from database.db import session
-from database.create_tables import Group, Subject, Teacher, Student, Mark
+from database.models import Group, Subject, Teacher, Student, Mark
 from faker import Faker
 from random import randint, choice
 
