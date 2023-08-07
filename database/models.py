@@ -1,5 +1,5 @@
 from sqlalchemy.orm import declarative_base
-from sqlalchemy import Column, Integer, String, ForeignKey, Date
+from sqlalchemy import Column, Integer, String, ForeignKey
 from .db import engine
 
 Base = declarative_base()
@@ -7,7 +7,7 @@ Base = declarative_base()
 class Group(Base):
     __tablename__ = "groups"
     id = Column(Integer, primary_key=True)
-    name = Column(String(10))
+    name = Column(String(120), nullable=False)
     
     
 class Student(Base):
@@ -20,7 +20,7 @@ class Student(Base):
 class Teacher(Base):
     __tablename__ = "teachers"
     id = Column(Integer, primary_key=True)
-    name = Column(String(120))
+    name = Column(String(120), nullable=False)
 
 
 class Subject(Base):
@@ -36,4 +36,4 @@ class Mark(Base):
     student_id = Column(Integer, ForeignKey("students.id"))
     subject_id = Column(Integer, ForeignKey("subjects.id"))
     mark = Column(Integer)
-    date = Column(String) # Date
+    date = Column(String)
